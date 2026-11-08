@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+  }
+}
+
+/* SVG Hardware Component Animations */
+@keyframes fanspin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wf {
+  to { stroke-dashoffset: -28px; }
+}
+
+@keyframes flow {
+  to { stroke-dashoffset: -5px; }
+}
+
+@keyframes wifi {
+  0%, 100% { opacity: 0.15; }
+  35% { opacity: 1; }
+}
+
+@keyframes bk {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes al {
+  0% { opacity: 0.55; }
+  50% { opacity: 0.05; }
+}
+
+@keyframes wv {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.08); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.85; }
+}
+
+.fanb {
+  transform-origin: 478px 214px;
+  animation: fanspin 1.05s linear infinite;
+}
+
+.fanb.off {
+  animation-play-state: paused;
+}
+
+.fanb.off path {
+  fill: #3b505c !important;
+}
+
+.fanb2 {
+  transform-origin: 478px 455px;
+  animation: fanspin 0.85s linear infinite;
+}
+
+.fanb2.off {
+  animation-play-state: paused;
+}
+
+.fanb2.off path {
+  fill: #3b505c !important;
+}
+
+.wf {
+  animation: wf 1.5s linear infinite;
+}
+
+.bk {
+  animation: bk 0.55s steps(1) infinite;
+}
+
+.al {
+  animation: al 0.75s steps(1) infinite;
+}
+
+.w0, .w1, .w2, .w3 {
+  opacity: 0.2;
+  animation: wifi 2.2s ease-in-out infinite;
+}
+.w1 { animation-delay: 0.25s; }
+.w2 { animation-delay: 0.5s; }
+.w3 { animation-delay: 0.75s; }
+
+#bzWaves {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#bz.ring #bzWaves {
+  opacity: 1;
+}
+
+#bz.ring #bzWaves path {
+  animation: wv 0.35s steps(1) infinite;
+}
+
+#puriParts {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#puri.on #puriParts {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fanb, .fanb2, .wf, .bk, .al, .w0, .w1, .w2, .w3, #bz.ring #bzWaves path {
+    animation: none !important;
+  }
+}
