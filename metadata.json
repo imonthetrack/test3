@@ -1,0 +1,6 @@
+{
+  "name": "SIAGA-UDARA AI - SMAN 1 Balikpapan",
+  "description": "Sistem Pemantau & Prediksi Kualitas Udara Cerdas 30 Menit ke Depan Berbasis ESP32 IoT dan AI di Lingkungan SMAN 1 Balikpapan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
